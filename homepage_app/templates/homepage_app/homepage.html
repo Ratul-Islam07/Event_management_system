@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Welcome to Event Management System</h1>
+
+    <h2 class="my-4">Upcoming Events</h2>
+
+    {% if events %}
+        <div class="container">
+            <!-- Search Bar -->
+            <form method="GET" class="mb-4">
+                <div class="input-group">
+                    <input type="text" name="query" value="{{ search_query }}" class="form-control" placeholder="Search for events (name, date YYYY-MM-DD, or location)...">
+                    <button class="btn btn-primary ml-2" type="submit">Search</button>
+                </div>
+            </form>
+
+
+            <!-- Category Filter -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-md-4">
+                    <form method="get" action="{% url 'homepage' %}">
+                        <select name="category" onchange="this.form.submit()" class="form-control">
+                            <option value="">Filter by Categories</option>
+                            {% for category in categories %}
+                                <option value="{{ category.id }}" {% if category.id|stringformat:"s" == request.GET.category %}selected{% endif %}>
+                                    {{ category.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                {% for event in events %}
+                    <div class="col-12 mb-4">
+                        <div class="p-4 border rounded bg-light">
+                            <h3 class="text-primary"><b>{{ event.name }}</b></h3>
+                            <p>{{ event.description|truncatewords:30 }}</p>
+                            <p><strong>Date:</strong> {{ event.date }}</p>
+                            <p><strong>Location:</strong> {{ event.location }}</p>
+
+                            <div class="d-flex justify-content-end">
+                                {% if user.is_authenticated %}
+                                    {% if event.id in user_bookings %}
+                                        <a href="{% url 'booked_events' %}" class="btn btn-secondary btn-sm mr-2">Booked</a>
+                                    {% else %}
+                                        <a href="{% url 'book_event' event.id %}" class="btn btn-primary btn-sm mr-2">Book Now</a>
+                                    {% endif %}
+
+                                    {% if event.created_by == user or user.is_staff %}
+                                        <a href="{% url 'update_event' event.id %}" class="btn btn-warning btn-sm mr-2">Update</a>
+                                        <a href="{% url 'delete_event' event.id %}" class="btn btn-danger btn-sm">Delete</a>
+                                    {% endif %}
+                                {% else %}
+                                    <a href="{% url 'login' %}?next={% url 'homepage' %}" class="btn btn-primary btn-sm">Login to Book</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <p class="text-muted">No upcoming events available.</p>
+    {% endif %}
+{% endblock %}

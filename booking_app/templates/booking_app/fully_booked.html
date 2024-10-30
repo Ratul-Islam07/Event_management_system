@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Fully Booked{% endblock %}
+
+{% block content %}
+    <h1>Event Fully Booked</h1>
+
+    <p>Sorry, this event is fully booked and cannot accept any more bookings.</p>
+
+    <a href="{% url 'homepage' %}" class="btn btn-primary">Back to Events List</a>
+{% endblock %}

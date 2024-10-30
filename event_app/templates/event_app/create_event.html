@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Create Event{% endblock %}
+
+{% block content %}
+    <h1>Create New Event</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form | crispy }}
+        
+        <div class="d-flex justify-content-between mt-3 mb-2">
+            <button type="submit" class="btn btn-success">Create Event</button>
+            <a href="{% url 'homepage' %}" class="btn btn-secondary">Back to Events List</a>
+        </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+/* Style for the custom navbar */
+.navbar-custom {
+    background-color: #343a40 ;  /* Dark background color */
+}
+
+.navbar-custom .navbar-brand {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.navbar-custom .navbar-brand:hover {
+    color: #00d1b2 !important; /* Accent color on hover */
+}
+
+.navbar-custom .nav-link {
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #00d1b2 !important; /* Accent color on hover */
+}
+
+/* Customizing the toggler button */
+.navbar-toggler {
+    color: #ffffff; /* Change text color if desired */
+    border-color: #00d1b2; /* Border color for the toggler button */
+}
+
+/* Center content on large screens */
+@media (min-width: 992px) {
+    .navbar .navbar-collapse {
+        justify-content: flex-end;
+    }
+}

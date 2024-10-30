@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center">Profile: {{ request.user.username }}</h2>
+                
+                <form method="POST" class="border p-4 rounded bg-light shadow-sm">
+                    {% csrf_token %}
+                    
+                    <!-- Display the essential fields in the form -->
+                    {{ form.username|as_crispy_field }}
+                    {{ form.first_name|as_crispy_field }}
+                    {{ form.last_name|as_crispy_field }}
+                    {{ form.email|as_crispy_field }}
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Update Profile</button>
+                    </div>
+                </form>
+
+                <div class="text-center mt-3">
+                    <p>Return to <a href="{% url 'homepage' %}">Homepage</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

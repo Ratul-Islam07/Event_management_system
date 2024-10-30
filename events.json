@@ -1,0 +1,178 @@
+[
+    {
+      "model": "event_app.category",
+      "pk": 1,
+      "fields": {
+        "name": "Conference"
+      }
+    },
+    {
+      "model": "event_app.category",
+      "pk": 2,
+      "fields": {
+        "name": "Concert"
+      }
+    },
+    {
+      "model": "event_app.category",
+      "pk": 3,
+      "fields": {
+        "name": "Workshop"
+      }
+    },
+    {
+      "model": "event_app.category",
+      "pk": 4,
+      "fields": {
+        "name": "Exhibition"
+      }
+    },
+    {
+      "model": "event_app.category",
+      "pk": 5,
+      "fields": {
+        "name": "Festival"
+      }
+    },
+    {
+      "model": "event_app.event",
+      "pk": 1,
+      "fields": {
+        "name": "Tech Conference 2024",
+        "description": "A conference bringing together technology enthusiasts, developers, and innovators.",
+        "date": "2024-11-10",
+        "location": "Tech Hub Convention Center, City A",
+        "category": 1,
+        "created_by": 1,
+        "capacity": 200,
+        "booked_seats": 50
+      }
+    },
+    {
+      "model": "event_app.event",
+      "pk": 2,
+      "fields": {
+        "name": "Live Music Concert",
+        "description": "A live music concert featuring top bands and artists.",
+        "date": "2024-12-05",
+        "location": "Open Arena, City B",
+        "category": 2,
+        "created_by": 1,
+        "capacity": 500,
+        "booked_seats": 300
+      }
+    },
+    {
+      "model": "event_app.event",
+      "pk": 3,
+      "fields": {
+        "name": "Python Workshop",
+        "description": "A hands-on Python programming workshop for beginners.",
+        "date": "2024-11-20",
+        "location": "Tech Learning Center, City C",
+        "category": 3,
+        "created_by": 1,
+        "capacity": 50,
+        "booked_seats": 40
+      }
+    },
+    {
+      "model": "event_app.event",
+      "pk": 4,
+      "fields": {
+        "name": "Startup Pitch Day",
+        "description": "Exciting pitch day for startups to showcase ideas.",
+        "date": "2024-11-30",
+        "location": "Innovation Hub, City D",
+        "category": 1,
+        "created_by": 1,
+        "capacity": 100,
+        "booked_seats": 100
+      }
+    },
+    {
+      "model": "event_app.event",
+      "pk": 5,
+      "fields": {
+        "name": "Art & Culture Exhibition",
+        "description": "An exhibition showcasing contemporary and traditional art.",
+        "date": "2024-12-10",
+        "location": "Art Museum, City E",
+        "category": 4,
+        "created_by": 1,
+        "capacity": 300,
+        "booked_seats": 250
+      }
+    },
+    {
+      "model": "event_app.event",
+      "pk": 6,
+      "fields": {
+        "name": "Film Festival 2024",
+        "description": "A festival showcasing independent films and documentaries.",
+        "date": "2024-12-15",
+        "location": "City Cinema, City F",
+        "category": 5,
+        "created_by": 1,
+        "capacity": 400,
+        "booked_seats": 350
+      }
+    },
+    {
+      "model": "event_app.event",
+      "pk": 7,
+      "fields": {
+        "name": "Jazz Night Concert",
+        "description": "A night of smooth jazz with famous performers.",
+        "date": "2024-11-25",
+        "location": "Jazz Club, City G",
+        "category": 2,
+        "created_by": 1,
+        "capacity": 150,
+        "booked_seats": 120
+      }
+    },
+    {
+      "model": "event_app.event",
+      "pk": 8,
+      "fields": {
+        "name": "Startup Innovation Workshop",
+        "description": "A workshop focused on innovation for startups.",
+        "date": "2024-12-01",
+        "location": "Innovation Hub, City D",
+        "category": 3,
+        "created_by": 1,
+        "capacity": 80,
+        "booked_seats": 60
+      }
+    },
+    {
+      "model": "event_app.event",
+      "pk": 9,
+      "fields": {
+        "name": "Artisan Craft Fair",
+        "description": "A fair showcasing local artisans and their handcrafted products.",
+        "date": "2024-11-29",
+        "location": "Town Square, City H",
+        "category": 4,
+        "created_by": 1,
+        "capacity": 200,
+        "booked_seats": 180
+      }
+    },
+    {
+      "model": "event_app.event",
+      "pk": 10,
+      "fields": {
+        "name": "Winter Music Festival",
+        "description": "A music festival featuring various genres in an open-air setting.",
+        "date": "2024-12-22",
+        "location": "Winter Park, City I",
+        "category": 5,
+        "created_by": 1,
+        "capacity": 500,
+        "booked_seats": 450
+      }
+    }
+  ]
+  

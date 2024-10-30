@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Event{% endblock %}
+
+{% block content %}
+    <h2>Book Seats for {{ event.name }}</h2>
+
+    <p><strong>Description:</strong> {{ event.description }}</p>
+    <p><strong>Date:</strong> {{ event.date }}</p>
+    <p><strong>Location:</strong> {{ event.location }}</p>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% else %}
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Confirm Booking</button>
+        </form>
+    {% endif %}
+
+    <a href="{% url 'homepage' %}" class="btn btn-secondary mt-3">Back to Events</a>
+{% endblock %}
